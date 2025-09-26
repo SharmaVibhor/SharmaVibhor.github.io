@@ -224,11 +224,11 @@ export function DeveloperPersonalSite() {
     "Design Systems",
   ];
 
-  const articles = [
+  /*const articles = [
     { title: "Rendering Strategies in 2025", href: "#", date: "Aug 12, 2025" },
     { title: "Playable Docs: Turning Spec into UI", href: "#", date: "Jun 03, 2025" },
     { title: "Design System Guardrails", href: "#", date: "Mar 24, 2025" },
-  ];
+  ];*/
 
   return (
     <div className={dark ? "dark" : ""}>
