@@ -175,9 +175,10 @@ export function DeveloperPersonalSite() {
       role: "Research Assistant",
       period: "Feb,2024 — June,2025",
       points: [
-        "Led migration to React Server Components, cutting TTFB by 42%.",
-        "Built design system used across 12 product surfaces.",
-        "Mentored 5 engineers; instituted review rubrics for accessibility.",
+        "Co-designed the VCI's capture stage structure and fabricated custom parts using laser cutting for assembly.",
+        "Optimized the image capture pipeline with CUDA kernels, boosting frame processing for real-time performance.",
+        "Developed and trained a segmentation model used for 3D reconstruction tasks, improving reconstruction accuracy and efficiency.",
+        "Integrated camera systems, hardware and software modules to enhance the stage’s performance for 3D reconstruction tasks."
       ],
     },
     {
@@ -185,8 +186,10 @@ export function DeveloperPersonalSite() {
       role: "Software Engineer",
       period: "July,2019 — Feb,2022",
       points: [
-        "Launched onboarding that improved week-4 retention by 18%.",
-        "Co-authored performance budget & automated CI checks.",
+        "Led end-to-end development of the Reminder and Calendar mobile applications, improving user experience and ensuring seamless functionality.",
+        "Assumed leadership of Reminder Widget \& Edge Modules at Samsung HQ, Korea, delivering enhancements like category selection and UI improvements",
+        "Collaborated on integrating cloud-based backup and synchronization features, ensuring seamless cross-device accessibility and reliability for users.",
+        "Implemented unit tests, resulting in a 20\% reduction in post-release bugs and increasing reliability.",
       ],
     },
     {
@@ -329,35 +332,42 @@ export function DeveloperPersonalSite() {
         </header>
 
         {/* Hero */}
-        <section id="home" className="relative overflow-hidden">
+        <section id="home" className="relative overflow-visible">
           <Container className="pt-12 sm:pt-16 pb-10">
             <div className="grid items-center gap-10 sm:gap-12 md:grid-cols-2">
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   Software Engineer
                 </p>
                 <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
                   Building fast, intelligent systems that people love to use.
                 </h1>
-                <p className="mt-4 text-gray-600 dark:text-gray-300">
+                <p className="mt-4 max-w-prose text-gray-600 dark:text-gray-300 break-words hyphens-auto">
                   Transforming research and code into seamless, real-world solutions.
                   Experience spans AI/ML research at Bonn and software development at Samsung.
                   Available for mid and senior positions, as well as select freelance work.
                 </p>
-                <div className="mt-6 flex flex-wrap items-center gap-3">
+                <div className="mt-6 flex items-center gap-3 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:whitespace-normal">
+
                   <Button
                     as="a"
                     href="#projects"
-                    className="bg-gray-900 text-white dark:bg-white dark:text-black hover:opacity-90"
+                    className="bg-gray-900 text-white dark:bg-white dark:text-black hover:opacity-90 shrink-0"
                   >
                     View Projects <Icon.ArrowUpRight className="h-4 w-4" />
                   </Button>
-                  <Button as="a" href="#contact" className="border border-gray-300 dark:border-white/20">
-                    Get in Touch
+                  <Button
+                    as="a"
+                    href="/VS_Resume.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    className="border border-gray-300 dark:border-white/20 shrink-0"
+                  >
+                    View Résumé
                   </Button>
                   <a
                     href="https://github.com/s58vshar?tab=repositories"
-                    className="group inline-flex items-center gap-2 text-sm hover:opacity-80"
+                    className="group inline-flex items-center gap-2 text-sm hover:opacity-80 shrink-0"
                     aria-label="GitHub"
                   >
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 dark:border-white/10">
@@ -367,7 +377,7 @@ export function DeveloperPersonalSite() {
                   </a>
                   <a
                     href="https://www.linkedin.com/in/sharma-vibhor15/"
-                    className="group inline-flex items-center gap-2 text-sm hover:opacity-80"
+                    className="group inline-flex items-center gap-2 text-sm hover:opacity-80 shrink-0"
                     aria-label="LinkedIn"
                   >
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 dark:border-white/10">
