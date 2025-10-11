@@ -1,5 +1,6 @@
 // src/DeveloperPersonalSite.tsx
 import React, { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 
 // ---------- Helpers: Icons (inline SVG so there are no deps)
 const Icon = {
@@ -204,28 +205,29 @@ export function DeveloperPersonalSite() {
     }
   ];
 
-  const skills = [
-    "Java",
-    "Python",
-    "PyTorch",
-    "TensorFlow",
-    "Kotlin",
-    "React",
-    "TypeScript",
-    "C++",
-    "AWS",
-    "Mobile Development",
-    "TailwindCSS",
-    "Git",
-    "Vite",
-    "Code Reviews",
-    "Data Structures",
-    "Unit Testing",
-    "Docker",
-    "CI/CD",
-    "Linux",
-    "Design Systems",
-  ];
+const skills = [
+  { name: "Data Structures", level: 85 },
+  { name: "Java", level: 80 },
+  { name: "Python", level: 80 },
+  { name: "AWS", level: 80 },
+  { name: "Docker", level: 80 },
+  { name: "Git", level: 79 },
+  { name: "Mobile Development", level: 75 },
+  { name: "PyTorch", level: 70 },
+  { name: "Code Reviews", level: 70 },
+  { name: "Unit Testing", level: 70 },
+  { name: "CI/CD", level: 70 },
+  { name: "Databases", level: 70 },
+  { name: "TensorFlow", level: 65 },
+  { name: "Kotlin", level: 65 },
+  { name: "C++", level: 65 },
+  { name: "Linux", level: 65 },
+  { name: "Design Systems", level: 60 },
+  { name: "React", level: 50 },
+  { name: "TailwindCSS", level: 45 },
+  { name: "TypeScript", level: 45 },
+  { name: "Vite", level: 45 },
+];
 
   /*const articles = [
     { title: "Rendering Strategies in 2025", href: "#", date: "Aug 12, 2025" },
@@ -366,7 +368,7 @@ export function DeveloperPersonalSite() {
                     View Résumé
                   </Button>
                   <a
-                    href="https://github.com/s58vshar?tab=repositories"
+                    href="https://github.com/SharmaVibhor?tab=repositories"
                     className="group inline-flex items-center gap-2 text-sm hover:opacity-80 shrink-0"
                     aria-label="GitHub"
                   >
@@ -457,16 +459,50 @@ export function DeveloperPersonalSite() {
 
         {/* Skills */}
         <Section id="skills" eyebrow="Toolbox" title="Skills & Focus">
-          <div className="flex flex-wrap gap-3">
-            {skills.map((s) => (
-              <Badge
-                key={s}
-                className="px-4 py-2 text-base font-semibold rounded-2xl shadow-sm ring-1 ring-inset ring-black/5 dark:ring-white/10 hover:-translate-y-0.5 hover:shadow-md transition"
-              >
-                {s}
-              </Badge>
-            ))}
-          </div>
+            <motion.div
+  className="flex flex-wrap gap-2"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={{
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  }}
+>
+  {skills.map((skill) => {
+    const baseColor =
+      skill.level >= 70
+        ? "bg-emerald-400 dark:bg-emerald-500"
+        : skill.level >= 50
+        ? "bg-amber-300 dark:bg-amber-400"
+        : "bg-rose-300 dark:bg-rose-400";
+
+    return (
+      <motion.div
+        key={skill.name}
+        className="relative overflow-hidden px-4 py-2 rounded-full text-sm font-medium border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        {/* Animated fill */}
+        <motion.div
+          className={`absolute left-0 top-0 h-full ${baseColor}`}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${skill.level}%` }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          style={{ zIndex: 0 }}
+        ></motion.div>
+
+        {/* Skill text */}
+        <span className="relative z-10 text-gray-900 dark:text-gray-900">{skill.name}</span>
+      </motion.div>
+    );
+  })}
+</motion.div>
+
         </Section>
 
         {/*
@@ -564,7 +600,7 @@ export function DeveloperPersonalSite() {
         </Section>
 
         {/* Footer */}
-        <footer className="border-t border-gray-200 dark:border-white/10">
+        {/* <footer className="border-t border-gray-200 dark:border-white/10">
           <Container className="flex flex-col sm:flex-row items-center justify-between gap-4 py-8 text-sm text-gray-500">
             <p>© {new Date().getFullYear()} Vibhor Sharma. All rights reserved.</p>
             <div className="flex items-center gap-3">
@@ -577,7 +613,7 @@ export function DeveloperPersonalSite() {
               </a>
             </div>
           </Container>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
