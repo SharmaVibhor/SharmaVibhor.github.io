@@ -163,10 +163,11 @@ export function DeveloperPersonalSite() {
       link: "https://github.com/s58vshar/movement-tracker",
     },
     {
-      title: "Personal Website Design",
-      desc: "Single source of truth → generates CSS vars, TS utils, and Figma styles.",
-      tags: ["Node.js", "CLI", "DX"],
-      link: "#",
+      title: "Personal Developer Portfolio",
+      desc: "Responsive personal website built with React, TypeScript, and Tailwind CSS — designed for smooth motion and mobile-first performance.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
+      link: "https://sharmavibhor.github.io",
+
     },
   ];
 
@@ -187,10 +188,21 @@ export function DeveloperPersonalSite() {
       role: "Software Engineer",
       period: "July,2019 — Feb,2022",
       points: [
-        "Led end-to-end development of the Reminder and Calendar mobile applications, improving user experience and ensuring seamless functionality.",
-        "Assumed leadership of Reminder Widget \& Edge Modules at Samsung HQ, Korea, delivering enhancements like category selection and UI improvements",
-        "Collaborated on integrating cloud-based backup and synchronization features, ensuring seamless cross-device accessibility and reliability for users.",
-        "Implemented unit tests, resulting in a 20\% reduction in post-release bugs and increasing reliability.",
+        "Led end-to-end development of Samsung Reminder \& Calendar applications used by 500M+ of devices worldwide, improving usability and reliability.",
+        "Independently contributed to Samsung Health APIs, enhancing data retrieval and visualization features for Wear OS integration.",
+        "Developed Spring Boot–based microservices  to support backend APIs, ensuring scalable and low-latency performance.",
+        "Integrated cloud-based synchronization, ensuring seamless data consistency across smartphones, tablets, and Wear OS smartwatches.",
+        "Implemented unit tests and CI/CD pipelines, reducing post-release bugs by 20\% and increasing overall reliability."
+      ],
+    },
+    {
+      company: "Murmuras GmBH",
+      role: "Mobile Developer",
+      period: "Nov,2022 — May,2023",
+      points: [
+        "Developed a mobile app to track users’ eating schedules, using barcode scanning to read product packaging and OpenFoodFacts API to retrieve nutritional information.",
+        "Implemented OCR-based product recognition and optimized data workflows for accurate information retrieval.",
+        "Processed and visualized user data in dashboards, providing actionable insights to scientists for nutritional studies.",
       ],
     },
     {
@@ -213,6 +225,9 @@ const skills = [
   { name: "Docker", level: 80 },
   { name: "Git", level: 79 },
   { name: "Mobile Development", level: 75 },
+  { name: "Spring Boot", level: 75 },
+  { name: "REST APIs", level: 75 },
+  { name: "SQL", level: 75 },
   { name: "PyTorch", level: 70 },
   { name: "Code Reviews", level: 70 },
   { name: "Unit Testing", level: 70 },
@@ -360,7 +375,7 @@ const skills = [
                   </Button>
                   <Button
                     as="a"
-                    href="/VS_Resume.pdf"
+                    href="/SharmaV_Resume.pdf"
                     target="_blank"
                     rel="noopener"
                     className="border border-gray-300 dark:border-white/20 shrink-0"
